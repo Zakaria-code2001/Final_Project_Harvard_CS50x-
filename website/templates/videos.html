@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h1>This is the Playlists Page</h1>
+{% for video in videos %}
+<article class="media content-section">
+  <div class="media-body">
+    <div class="article-metadata">
+      <a class="mr-2">{{ video['author']}}</a>
+    </div>
+    <h2><a class="article-title">{{ video.title }}</a></h2>
+      <iframe class="article-content" width="560" height="315" src="https://www.youtube.com/embed/{{ video.url.split('/')[-1] }}" frameborder="0" allowfullscreen></iframe>
+  </div>
+</article>
+{% endfor %}
+{% endblock body %}

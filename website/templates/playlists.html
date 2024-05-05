@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <h1>This is the Playlists Page</h1>
+  {% for playlist in playlists %}
+    <article class="media content-section">
+      <div class="media-body">
+        <div class="article-metadata">
+          <a class="mr-2" href="{{ url_for('views.videos') }}">{{ playlist.name }}</a>
+        </div>
+        <h2><a class="article-title" href="#">{{ playlist.name }}</a></h2>
+      </div>
+    </article>
+  {% endfor %}
+{% endblock body %}
